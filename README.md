@@ -25,6 +25,8 @@ The migrations and seeds for the users table, and all login functionality is alr
 
 The mobile responsiveness is also being handled by some neat JS and Bulma classes, be sure to incorporate that view in your project goals!
 
+SCSS files are included in client/styles. Make sure you define your own CSS in these files too, as the files in the public folder (styles.css & styles.css.map) are generated from these .scss files (just like the bundle.js & bundle.js.map are generated from your component files) and will be overwritten.
+
 ## User Stories
 
 ### MVP
