@@ -11,16 +11,17 @@ The hope is that within a small community this could be a great go to for making
 
 ## The Tech
 
-A Boilerplate is already set up for you (Thanks Harrison!) with everything you will need to get started. This boilerplate is set up to use:
+A Boilerplate is already set up for you with everything you will need to get started. This boilerplate is set up to use:
 
 * [React](https://reactjs.org/docs/getting-started.html)
 * [Redux](https://redux.js.org/)
 * [Express](https://expressjs.com/en/api.html)
 * [Knex.js (SQL)](https://knexjs.org/)
 * [Bulma (CSS framework)](https://bulma.io/documentation/)
-* [JWT Auth (Local)](https://jwt.io/)
+* [Sass](https://sass-lang.com/documentation/syntax)
+* [Authenticare](https://www.npmjs.com/package/authenticare)
 
-The Migration and seeds for the users table, and all login functionality is already set up!
+The migrations and seeds for the users table, and all login functionality is already set up!
 
 The mobile responsiveness is also being handled by some neat JS and Bulma classes, be sure to incorporate that view in your project goals!
 
