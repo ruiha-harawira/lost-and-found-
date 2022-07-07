@@ -1,34 +1,32 @@
 import React, { useState } from 'react'
-// IMPORT ADDLOSTPET FUNC 
+//  IMPORT ADDFOUNDPET FUNC
 
-function lostForm(props){
+function foundForm(props) {
 
-  const [formData, setFormData] = useState({
-    name:'',
+const [formData, setFormData] = useState({
     species:'',
-    photo: '',
+    photo: ''
   })
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    const newLostPet = formData
+    const newFoundPet = formData
 
     setFormData({
-      name:'',
       species: '',
-      photo: '',
+      photo: ''
     })
-    addLostPet(newLostPet)
- 
+
+    addFoundPet(newFoundPet)
+   
     .then(()=>{
       
-      props.refreshLostPets()
+      props.refreshFoundPets()
     }).catch((err) => {
       console.error(err)
     })
 
   }
-
   const handleChange =(e) =>{
     console.log(e.target.name,e.target.value)
     setFormData({
@@ -40,16 +38,13 @@ function lostForm(props){
   return (
   <>
   <form onSubmit={handleSubmit}>
-    <label htmlFor='name'>Pet Name:</label>
-    <input id='name' name='name' type='text' value={formData.name} onChange={handleChange}/>
-    <br/>
     <label htmlFor='species'>Species:</label>
     <input id='species' name='species' type='text' value={formData.species} onChange={handleChange}/>
     <br/>
     <label htmlFor='photo'>Upload image:</label>
     <input id='photo' name='photo' type='text' value={formData.photo} onChange={handleChange}/>
     <br/>
-    <button>Find my lost pet</button>
+    <button>Reunite this pet with their owner</button>
   </form>
   </>
 
@@ -57,4 +52,9 @@ function lostForm(props){
 
 }
 
-export default lostForm
+export default foundForm
+
+
+
+
+
