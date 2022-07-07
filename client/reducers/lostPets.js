@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux'
 import request from 'superagent'
 
-//
 // Actions
-//
+
 export const REQUEST_LOST_PETS = 'REQUEST_LOST_PETS'
 export const RECEIVE_LOST_PETS = 'RECEIVE_LOST_PETS'
 export const ADD_LOST_PET = 'ADD_LOST_PET'
@@ -28,9 +27,8 @@ export function addLostPet(pet) {
   }
 }
 
-//
 // Thunks
-//
+
 export function fetchLostPets() {
   return (dispatch) => {
     dispatch(requestLostPets())
@@ -68,18 +66,14 @@ export function postLostPet(pet) {
   }
 }
 
-//
 // Reducer
-//
+
 export default function lostPetsReducer(state = [], action) {
   const { type, payload } = action
   switch (type) {
     case RECEIVE_LOST_PETS:
-      // replace current lostPetsReducer state with the array we received from the server
-      // (using fetchLostPets)
       return payload
     case ADD_LOST_PET:
-      // clone current lostPetsReducer state and add the pet
       return [...state, payload]
     default:
       return state
@@ -88,15 +82,10 @@ export default function lostPetsReducer(state = [], action) {
 
 export const lostPetsReducerName = 'lostPets'
 
-//
 // Selectors
-//
-// this selector gets the lostPetsReducer state (the lost pets array)
-// from our combined reducer in index.js
+
 const selectLostPets = (rootState) => rootState[lostPetsReducerName]
 
-//
 // Hooks
-//
-// this hook will return the array of lost pets (the lost pets reducer state)
+
 export const useLostPets = () => useSelector(selectLostPets)
