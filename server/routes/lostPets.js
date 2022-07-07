@@ -15,6 +15,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const newLostPet = req.body
+  newLostPet.user_id = newLostPet.userId
+  delete newLostPet.userId
   db.addALostPet(newLostPet)
     .then(([id]) => {
       res.json({ ...newLostPet, id })
