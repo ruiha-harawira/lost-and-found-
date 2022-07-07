@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux'
 import request from 'superagent'
 
 // Actions
@@ -35,14 +34,12 @@ export function fetchLostPets() {
     return request
       .get('/api/lost')
       .then((res) => {
-        console.log('I got lost pets', res.body)
         dispatch(receiveLostPets(res.body))
         return null
       })
       .catch((err) => {
         const errMsg = `Failed to fetch lost pets: ${err.message}`
         console.warn(errMsg)
-        console.log('TODO: Dispatch error action')
       })
   }
 }
@@ -54,14 +51,12 @@ export function postLostPet(pet) {
       .post('/api/lost')
       .send(pet)
       .then((res) => {
-        console.log('I posted a lost pet', res.body)
         dispatch(addLostPet(res.body))
         return null
       })
       .catch((err) => {
         const errMsg = `Failed to post lost pet: ${err.message}`
         console.warn(errMsg)
-        console.log('TODO: Dispatch error action')
       })
   }
 }
@@ -86,6 +81,4 @@ export const lostPetsReducerName = 'lostPets'
 
 const selectLostPets = (rootState) => rootState[lostPetsReducerName]
 
-// Hooks
-
-export const useLostPets = () => useSelector(selectLostPets)
+export { selectLostPets }
