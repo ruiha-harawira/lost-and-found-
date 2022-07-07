@@ -72,3 +72,6 @@ function Nav() {
 }
 
 export default Nav
+
+// make logo
+// import logo from public folder
