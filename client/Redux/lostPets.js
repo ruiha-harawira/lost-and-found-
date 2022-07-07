@@ -51,7 +51,7 @@ export function fetchLostPets() {
   }
 }
 
-export function postLostPet(pet) {
+export function addLostPet(pet) {
   return (dispatch) => {
     dispatch(requestLostPets())
     return request
