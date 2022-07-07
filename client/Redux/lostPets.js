@@ -1,6 +1,8 @@
 import request from 'superagent'
 
-// Actions
+//  A C T I O N S  //
+
+//Typically, these actions have lived in the '/client/actions' folder
 
 export const REQUEST_LOST_PETS = 'REQUEST_LOST_PETS'
 export const RECEIVE_LOST_PETS = 'RECEIVE_LOST_PETS'
@@ -26,7 +28,12 @@ export function addLostPet(pet) {
   }
 }
 
-// Thunks
+//   T H U N K S   //
+
+// Typically, these actions have lived in the '/client/actions' folder
+// Thunks are how our backend code will reach our front end....
+// look at the components/LostPetSelector file in components to find
+// the hook, used in the front end to return an array of lost pets from the DB
 
 export function fetchLostPets() {
   return (dispatch) => {
@@ -61,7 +68,7 @@ export function postLostPet(pet) {
   }
 }
 
-// Reducer
+//  REDUCERS   //
 
 export default function lostPetsReducer(state = [], action) {
   const { type, payload } = action
@@ -77,7 +84,7 @@ export default function lostPetsReducer(state = [], action) {
 
 export const lostPetsReducerName = 'lostPets'
 
-// Selectors
+//  SELECTORS //
 
 const selectLostPets = (rootState) => rootState[lostPetsReducerName]
 
