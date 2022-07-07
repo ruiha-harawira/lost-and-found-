@@ -7,7 +7,7 @@ exports.up = function(knex) {
     table.increments('id').primary()
     table.string('species')
     table.string('photo')
-    table.integer('user_id')
+    table.integer('user_id').references('users.id')
   })
   
 };
