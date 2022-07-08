@@ -4,10 +4,6 @@ function Home() {
   return (
     <>
       <div className="box cta">
-        <p className="has-text-centered">
-          <span className="tag is-info">Alert</span> Boston, a wheaten terrier,
-          is at large in Newtown - please keep an eye out for Boston!
-        </p>
       </div>
       <section className="container">
         <div className="columns features">
@@ -16,7 +12,7 @@ function Home() {
               <div className="card-image has-text-centered">
                 <figure className="image is-4by3">
                   <img
-                    src="https://picsum.photos/640/480/?random"
+                    src=""
                     alt="Description"
                   />
                 </figure>
@@ -77,7 +73,7 @@ function Home() {
           </div>
         </div>
         <div class="container is-widescreen">
-  <div class="notification is-info">
+  <div class="notification is-danger">
     Top 10 <strong>tips</strong> <em>for</em> pet parents who have an AWOL pet.
   </div>
 </div>
