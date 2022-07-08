@@ -12,7 +12,7 @@ function Home() {
               <div className="card-image has-text-centered">
                 <figure className="image is-4by3">
                   <img
-                    src=""
+                    src="/images/1.png"
                     alt="Description"
                   />
                 </figure>
@@ -33,7 +33,7 @@ function Home() {
               <div className="card-image has-text-centered">
                 <figure className="image is-4by3">
                   <img
-                    src="https://picsum.photos/640/480/?random"
+                    src="/images/2.png"
                     alt="Description"
                   />
                 </figure>
@@ -54,7 +54,7 @@ function Home() {
               <div className="card-image has-text-centered">
                 <figure className="image is-4by3">
                   <img
-                    src="https://picsum.photos/640/480/?random"
+                    src="/images/3.png"
                     alt="Description"
                   />
                 </figure>
