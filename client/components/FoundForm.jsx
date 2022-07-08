@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-//  IMPORT ADDFOUNDPET FUNC
+import { addFoundPet } from '../Redux/foundPets'
 
 function foundForm(props) {
 
@@ -11,10 +11,11 @@ const [formData, setFormData] = useState({
   const handleSubmit = (e) =>{
     e.preventDefault()
     const newFoundPet = formData
+    dispatchEvent(postFoundPet(newPet))
 
     setFormData({
       species: '',
-      photo: ''
+      photo: '',
     })
 
     addFoundPet(newFoundPet)

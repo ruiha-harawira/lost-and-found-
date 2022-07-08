@@ -4,26 +4,26 @@ import request from 'superagent'
 
 //Typically, these actions have lived in the '/client/actions' folder
 
-export const REQUEST_LOST_PETS = 'REQUEST_LOST_PETS'
-export const RECEIVE_LOST_PETS = 'RECEIVE_LOST_PETS'
-export const ADD_LOST_PET = 'ADD_LOST_PET'
+export const REQUEST_FOUND_PETS = 'REQUEST_FOUND_PETS'
+export const RECEIVE_FOUND_PETS = 'RECEIVE_FOUND_PETS'
+export const ADD_FOUND_PET = 'ADD_FOUND_PET'
 
-export function requestLostPets() {
+export function requestFoundPets() {
   return {
-    type: REQUEST_LOST_PETS,
+    type: REQUEST_FOUND_PETS,
   }
 }
 
-export function receiveLostPets(pets) {
+export function receiveFoundPets(pets) {
   return {
-    type: RECEIVE_LOST_PETS,
+    type: RECEIVE_FOUND_PETS,
     payload: pets,
   }
 }
 
-export function postLostPet(pet) {
+export function addFoundPet(pet) {
   return {
-    type: ADD_LOST_PET,
+    type: ADD_FOUND_PET,
     payload: pet,
   }
 }
@@ -35,13 +35,13 @@ export function postLostPet(pet) {
 // look at the components/LostPetSelector file in components to find
 // the hook, used in the front end to return an array of lost pets from the DB
 
-export function fetchLostPets() {
+export function fetchFoundPets() {
   return (dispatch) => {
-    dispatch(requestLostPets())
+    dispatch(requestFoundPets())
     return request
       .get('/api/lost')
       .then((res) => {
-        dispatch(receiveLostPets(res.body))
+        dispatch(receiveFoundPets(res.body))
         return null
       })
       .catch((err) => {
@@ -51,41 +51,39 @@ export function fetchLostPets() {
   }
 }
 
-export function addLostPet(pet) {
+export function addFoundPets() {
   return (dispatch) => {
-    dispatch(requestLostPets())
+    dispatch(requestFoundPets())
     return request
-      .post('/api/lost')
-      .send(pet)
+      .post('/api/found')
       .then((res) => {
-        dispatch(postLostPet(res.body))
+        dispatch(addFoundPets(res.body))
         return null
       })
       .catch((err) => {
-        const errMsg = `Failed to post lost pet: ${err.message}`
-        console.warn(errMsg)
+        const errMsg = `Failed to fetch found pets: ${err.message}`
+        console.log(errMsg)
       })
   }
 }
 
-//  REDUCERS   //
+//
+// REDUCER
+//
 
-export default function lostPetsReducer(state = [], action) {
+export default function foundPetsReducer(state = [], action) {
   const { type, payload } = action
   switch (type) {
-    case RECEIVE_LOST_PETS:
+    case RECEIVE_FOUND_PETS:
       return payload
-    case ADD_LOST_PET:
+    case ADD_FOUND_PET:
       return [...state, payload]
     default:
       return state
   }
 }
 
-export const lostPetsReducerName = 'lostPets'
+export const foundPetsReducerName = 'foundPets'
+const selectFoundPets = (rootState) => rootState[foundPetsReducerName]
 
-//  SELECTORS //
-
-const selectLostPets = (rootState) => rootState[lostPetsReducerName]
-
-export { selectLostPets }
+export { selectFoundPets }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// IMPORT ADDLOSTPET FUNC 
+import { addLostPet } from '../Redux/lostPets'
 
 function lostForm(props){
 
