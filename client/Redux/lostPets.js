@@ -21,7 +21,7 @@ export function receiveLostPets(pets) {
   }
 }
 
-export function addLostPet(pet) {
+export function postLostPet(pet) {
   return {
     type: ADD_LOST_PET,
     payload: pet,
@@ -58,7 +58,7 @@ export function addLostPet(pet) {
       .post('/api/lost')
       .send(pet)
       .then((res) => {
-        dispatch(addLostPet(res.body))
+        dispatch(postLostPet(res.body))
         return null
       })
       .catch((err) => {

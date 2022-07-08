@@ -11,6 +11,7 @@ import Register from './Register'
 import Nav from './Nav'
 import Home from './Home'
 
+
 import { checkAuth } from '../Redux/authActions'
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
           <Route path='/lostPets' element={<LostPets />} />
           <Route path='/foundPets' element={<FoundPets />} />
         </Routes>
+       
       </div>
     </div>
   )
