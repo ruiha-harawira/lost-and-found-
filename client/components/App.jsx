@@ -40,7 +40,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={auth.isAuthenticated ? <Home /> : <Login />}
+            element={<Home /> }
           />
           <Route path="./Login" element={<Login />} />
           <Route path="./Register" element={<Register />} />
