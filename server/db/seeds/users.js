@@ -19,6 +19,18 @@ const fakeUserData = [
     email_address: 'hello@devacademy.co.nz',
     contact_details: 'Ring the bell ;)',
   },
+  {
+    username: 'Thanos',
+    password: 'ThanosIsTheBest123',
+    email_address: 'hello@devacademy.co.nz',
+    contact_details: 'click fingers (preferably yellow infinity stone)',
+  },
+  {
+    username: 'Eugene H. Krabs',
+    password: 'MoneyMoneyMoney',
+    email_address: 'hello@devacademy.co.nz',
+    contact_details: 'The Krusty Krab',
+  },
 ]
 
 const fakeUsers = Promise.all(fakeUserData.map(replacePasswordWithHash))

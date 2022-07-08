@@ -3,7 +3,9 @@ const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
 
 function getLostPets(db = connection) {
-  return db('lost').select('lost.user_id AS userId')
+  return db('lost')
+    .join('users', 'lost.user_id','users.id')
+    .select('lost.id AS id', 'name','species','photo','username','email_address','contact_details','users.id AS userId')
 }
 
 function addALostPet(newLostPet, db = connection) {

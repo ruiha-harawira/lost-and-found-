@@ -4,8 +4,8 @@
  */
 exports.seed = async function(knex) {
   // Deletes ALL existing entries
-  await knex('table_name').del()
-  await knex('table_name').insert([
+  await knex('found').del()
+  await knex('found').insert([
     {id: 1, species: 'Cat', photo: 'https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2020%2F06%2F26%2Ftiny-white-kitten-873941684-2000.jpg', user_id: 1},
     {id: 2, species: 'Dog', photo: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg', user_id: 1},
     {id: 3, species: 'Dog', photo: 'https://cf.ltkcdn.net/dogs/images/orig/188866-850x668-pomeranian.jpg', user_id: 1}
