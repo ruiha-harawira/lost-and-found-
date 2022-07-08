@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// IMPORT ADDLOSTPET FUNC 
+import { addLostPet } from '../Redux/lostPets'
 
 function lostForm(props){
 
@@ -19,7 +19,7 @@ function lostForm(props){
       photo: '',
     })
     addLostPet(newLostPet)
-    //comes back from server side, then do something, in this case we don't care what it is.
+   
     .then(()=>{
       
       props.refreshLostPets()

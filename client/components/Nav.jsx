@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import { logoutUser } from '../actions/auth'
+import { logoutUser } from '../Redux/authActions'
 
 function Nav() {
   const navigateTo = useNavigate()

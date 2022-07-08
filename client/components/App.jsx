@@ -7,6 +7,7 @@ import Register from './Register'
 import Nav from './Nav'
 import Home from './Home'
 
+
 import { checkAuth } from '../Redux/authActions'
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
+       
       </div>
     </div>
   )
