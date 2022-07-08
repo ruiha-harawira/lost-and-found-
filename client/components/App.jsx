@@ -30,7 +30,7 @@ function App() {
       <div className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to="/" className="">
-            <h1 className="title is-1">Lost and Found</h1>
+            <img src= "/images/LostAFoundLogo.png"/>
           </Link>
           <Nav />
         </div>

@@ -22,8 +22,9 @@ function Nav() {
   }
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="container">
+      
         <div className="navbar-brand">
           <span
             onClick={toggleBurger}
@@ -62,6 +63,20 @@ function Nav() {
                 >
                   Register
                 </Link>
+                {/* <link
+                    onClick={toggleBurger}
+                    className="navbar-item is-large"
+                    to="/lost pets"
+                  >
+                    FindPet
+                </Link>
+                <link
+                    onClick={toggleBurger}
+                    className="navbar-item is-large"
+                    to="/found pets"
+                  >
+                    FoundPet
+                </Link> */}
               </>
             )}
           </div>
@@ -72,3 +87,8 @@ function Nav() {
 }
 
 export default Nav
+
+// make logo
+// import logo from public folder
+
+// create links for lost pet and found pet page
