@@ -1,6 +1,8 @@
 import request from 'superagent'
 
-//actions
+//  A C T I O N S  //
+
+//Typically, these actions have lived in the '/client/actions' folder
 
 export const REQUEST_FOUND_PETS = 'REQUEST_FOUND_PETS'
 export const RECEIVE_FOUND_PETS = 'RECEIVE_FOUND_PETS'
@@ -26,15 +28,36 @@ export function addFoundPet(pet) {
   }
 }
 
-// 
+//   T H U N K S   //
+
+// Typically, these actions have lived in the '/client/actions' folder
+// Thunks are how our backend code will reach our front end....
+// look at the components/LostPetSelector file in components to find
+// the hook, used in the front end to return an array of lost pets from the DB
+
 export function fetchFoundPets() {
   return (dispatch) => {
     dispatch(requestFoundPets())
     return request
-      .get('/api/found')
+      .get('/api/lost')
       .then((res) => {
-        console.log('i got found pets', res.body)
         dispatch(receiveFoundPets(res.body))
+        return null
+      })
+      .catch((err) => {
+        const errMsg = `Failed to fetch lost pets: ${err.message}`
+        console.warn(errMsg)
+      })
+  }
+}
+
+export function addFoundPets() {
+  return (dispatch) => {
+    dispatch(requestFoundPets())
+    return request
+      .post('/api/found')
+      .then((res) => {
+        dispatch(addFoundPets(res.body))
         return null
       })
       .catch((err) => {
@@ -44,26 +67,8 @@ export function fetchFoundPets() {
   }
 }
 
-export function postLostPet(pet) {
-  return (dispatch) => {
-    dispatch(requestFoundPets())
-    return request
-      .post('/api/found')
-      .send(pet)
-      .then((res) => {
-        console.log('i got found pets', res.body)
-        dispatch(addFoundPet(res.body))
-        return null
-      })
-      .catch((err) => {
-        const errMsg = `Failed to fetch found pet: ${err.message}`
-        console.log(errMsg)
-      })
-  }
-}
-
 //
-//reducer
+// REDUCER
 //
 
 export default function foundPetsReducer(state = [], action) {
@@ -81,4 +86,4 @@ export default function foundPetsReducer(state = [], action) {
 export const foundPetsReducerName = 'foundPets'
 const selectFoundPets = (rootState) => rootState[foundPetsReducerName]
 
-export { selectFoundPets}
+export { selectFoundPets }
