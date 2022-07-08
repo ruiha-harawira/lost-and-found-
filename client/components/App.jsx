@@ -37,12 +37,12 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={auth.isAuthenticated ? <Home /> : <Login />}
+            element={<Home /> }
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path='/lostForm' element={<LostForm />} />
-          <Route path='/foundForm' element={<FoundForm />} />
+          <Route path='/foundForm' element={auth.isAuthenticated ? <FoundForm /> : <Login />} />
           <Route path='/lostPets' element={<LostPets />} />
           <Route path='/foundPets' element={<FoundPets />} />
         </Routes>
