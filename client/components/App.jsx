@@ -49,9 +49,6 @@ function App() {
           <Route path='./LostPets' element={<LostPets />} /> 
           <Route path='./FoundPets' element={<FoundPets />} />
         </Routes> 
-  
-
-        
       </div>
     </div>
   )
