@@ -42,9 +42,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path='/lostForm' element={<LostForm />} />
+          {/* auth as per readme */}
           <Route path='/foundForm' element={auth.isAuthenticated ? <FoundForm /> : <Login />} />
           <Route path='/lostPets' element={<LostPets />} />
           <Route path='/foundPets' element={<FoundPets />} />
+          
         </Routes>
       </div>
     </div>
