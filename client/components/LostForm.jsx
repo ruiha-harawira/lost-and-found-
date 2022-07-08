@@ -19,7 +19,7 @@ function lostForm(props){
       photo: '',
     })
     addLostPet(newLostPet)
-   
+ 
     .then(()=>{
       
       props.refreshLostPets()
