@@ -2,6 +2,10 @@ import React, { useEffect } from 'react'
 import { Routes, Route, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
+import FoundPets from './foundPets'
+import LostPets from './lostPets'
+import LostForm from './lostForm'
+import FoundForm from './foundForm'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
@@ -37,6 +41,10 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path='/lostForm' element={<LostForm />} />
+          <Route path='/foundForm' element={<FoundForm />} />
+          <Route path='/lostPets' element={<LostPets />} />
+          <Route path='/foundPets' element={<FoundPets />} />
         </Routes>
       </div>
     </div>
