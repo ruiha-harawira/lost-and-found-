@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 
-import { loginError, registerUserRequest } from '../actions/auth'
+import { loginError, registerUserRequest } from '../Redux/authActions'
 
 function Register() {
   const navigateTo = useNavigate()

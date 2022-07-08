@@ -7,7 +7,7 @@ import Register from './Register'
 import Nav from './Nav'
 import Home from './Home'
 
-import { checkAuth } from '../actions/auth'
+import { checkAuth } from '../Redux/authActions'
 
 function App() {
   const dispatch = useDispatch()
