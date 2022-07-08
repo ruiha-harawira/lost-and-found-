@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import FoundPets from './FoundPets'
-import LostPets from './LostPets'
+import LostPets from './LostPet'
 import LostForm from './LostForm'
 import FoundForm from './FoundForm'
 import Login from './Login'
